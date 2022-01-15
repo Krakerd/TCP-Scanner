@@ -6,10 +6,18 @@ import (
 	"sync"
 )
 
+//#######################
+//## Valores a cambiar ##
+//#######################
+// Dirección: Strin antes del %d linea 26
+// Numero Puertos: Variable puertos lina 16
+
 func main() {
+	puertos := 1024
+
 	var wg sync.WaitGroup //añade un objeto de espera para que de tiempo a completar las conexiones
 	fmt.Println("=== TCP SCANNER START ===")
-	for i := 1; i <= 1024; i++ { //create loop of ports to scan
+	for i := 1; i <= puertos; i++ { //create loop of ports to scan
 		wg.Add(1)
 
 		go func(j int) { //crea una nueva rutina por cada iteración del bucle
